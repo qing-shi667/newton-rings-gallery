@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f5">
+  <meta name="description" content="八种光源、观察方式与放置方向下的牛顿环实拍图对照。">
+  <title>牛顿环观察图集</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+      color: #202425;
+      background: #f7f7f5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body { margin: 0; }
+
+    button { font: inherit; }
+
+    .site-header {
+      border-bottom: 1px solid #d9dddc;
+      background: #fff;
+    }
+
+    .header-inner,
+    main,
+    footer {
+      width: min(1200px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      padding-block: 24px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .site-note { margin: 0; color: #5b6565; font-size: 14px; }
+
+    main { padding-block: 36px 54px; }
+
+    .group + .group { margin-top: 48px; }
+
+    .group-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .group-heading h2 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .group-heading p { margin: 0; color: #687272; font-size: 13px; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .item {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #d8dddb;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .image-button {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: #000;
+      cursor: zoom-in;
+    }
+
+    .image-button img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      transition: transform .2s ease;
+    }
+
+    .image-button:hover img { transform: scale(1.035); }
+    .image-button:focus-visible { outline: 3px solid #177c78; outline-offset: -3px; }
+
+    .caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 54px;
+      padding: 12px 13px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .caption span:last-child { color: #747d7c; font-size: 12px; font-weight: 400; }
+
+    footer {
+      padding-block: 20px 30px;
+      border-top: 1px solid #d9dddc;
+      color: #687272;
+      font-size: 12px;
+    }
+
+    dialog {
+      width: min(1100px, calc(100vw - 28px));
+      max-width: none;
+      max-height: calc(100dvh - 28px);
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid #56605f;
+      border-radius: 6px;
+      background: #121515;
+      color: #fff;
+    }
+
+    dialog::backdrop { background: rgb(8 13 13 / 88%); }
+
+    .viewer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 52px;
+      padding: 8px 12px 8px 18px;
+    }
+
+    #viewer-title { margin: 0; font-size: 15px; font-weight: 600; }
+
+    .viewer-actions { display: flex; gap: 5px; }
+
+    .icon-button {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .icon-button:hover,
+    .icon-button:focus-visible { background: #394141; }
+
+    .icon-button svg { width: 19px; height: 19px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+    #viewer-image {
+      display: block;
+      width: 100%;
+      height: calc(100dvh - 96px);
+      max-height: 850px;
+      object-fit: contain;
+      background: #000;
+    }
+
+    @media (max-width: 850px) {
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 520px) {
+      .header-inner, main, footer { width: calc(100% - 28px); }
+      .header-inner { display: block; padding-block: 20px; }
+      h1 { font-size: 23px; }
+      .site-note { margin-top: 5px; }
+      main { padding-block: 26px 40px; }
+      .group + .group { margin-top: 36px; }
+      .group-heading { gap: 8px; }
+      .gallery { gap: 10px; }
+      .caption { display: block; min-height: 57px; padding: 9px 10px; font-size: 13px; }
+      .caption span { display: block; }
+      .caption span:last-child { margin-top: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>牛顿环观察图集</h1>
+      <p class="site-note">2 种光源 · 2 种观察方式 · 2 种放置方向</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="group" aria-labelledby="sodium-title">
+      <div class="group-heading">
+        <h2 id="sodium-title">钠光灯</h2>
+        <p>单色光</p>
+      </div>
+      <div class="gallery">
+        <article class="item"><button class="image-button" type="button" data-title="钠光灯 · 反射 · 正置" data-image="images/sodium-reflection-upright.png" aria-label="放大查看钠光灯反射正置"><img src="images/sodium-reflection-upright.png" alt="钠光灯反射正置条件下的牛顿环" loading="eager"></button><div class="caption"><span>反射 · 正置</span><span>01 / 08</span></div></article>
+        <article class="item"><button class="image-button" type="button" data-title="钠光灯 · 反射 · 倒置" data-image="images/sodium-reflection-inverted.png" aria-label="放大查看钠光灯反射倒置"><img src="images/sodium-reflection-inverted.png" alt="钠光灯反射倒置条件下的牛顿环" loading="eager"></button><div class="caption"><span>反射 · 倒置</span><span>02 / 08</span></div></article>
+        <article class="item"><button class="image-button" type="button" data-title="钠光灯 · 透射 · 正置" data-image="images/sodium-transmission-upright.png" aria-label="放大查看钠光灯透射正置"><img src="images/sodium-transmission-upright.png" alt="钠光灯透射正置条件下的牛顿环" loading="lazy"></button><div class="caption"><span>透射 · 正置</span><span>03 / 08</span></div></article>
+        <article class="item"><button class="image-button" type="button" data-title="钠光灯 · 透射 · 倒置" data-image="images/sodium-transmission-inverted.png" aria-label="放大查看钠光灯透射倒置"><img src="images/sodium-transmission-inverted.png" alt="钠光灯透射倒置条件下的牛顿环" loading="lazy"></button><div class="caption"><span>透射 · 倒置</span><span>04 / 08</span></div></article>
+      </div>
+    </section>
+
+    <section class="group" aria-labelledby="white-title">
+      <div class="group-heading">
+        <h2 id="white-title">白光</h2>
+        <p>复色光</p>
+      </div>
+      <div class="gallery">
+        <article class="item"><button class="image-button" type="button" data-title="白光 · 反射 · 正置" data-image="images/white-reflection-upright.jpg" aria-label="放大查看白光反射正置"><img src="images/white-reflection-upright.jpg" alt="白光反射正置条件下的牛顿环" loading="lazy"></button><div class="caption"><span>反射 · 正置</span><span>05 / 08</span></div></article>
+        <article class="item"><button class="image-button" type="button" data-title="白光 · 反射 · 倒置" data-image="images/white-reflection-inverted.png" aria-label="放大查看白光反射倒置"><img src="images/white-reflection-inverted.png" alt="白光反射倒置条件下的牛顿环" loading="lazy"></button><div class="caption"><span>反射 · 倒置</span><span>06 / 08</span></div></article>
+        <article class="item"><button class="image-button" type="button" data-title="白光 · 透射 · 正置" data-image="images/white-transmission-upright.png" aria-label="放大查看白光透射正置"><img src="images/white-transmission-upright.png" alt="白光透射正置条件下的牛顿环" loading="lazy"></button><div class="caption"><span>透射 · 正置</span><span>07 / 08</span></div></article>
+        <article class="item"><button class="image-button" type="button" data-title="白光 · 透射 · 倒置" data-image="images/white-transmission-inverted.png" aria-label="放大查看白光透射倒置"><img src="images/white-transmission-inverted.png" alt="白光透射倒置条件下的牛顿环" loading="lazy"></button><div class="caption"><span>透射 · 倒置</span><span>08 / 08</span></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>牛顿环 · 不同观察条件下的图像对照</footer>
+
+  <dialog id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-header">
+      <p id="viewer-title"></p>
+      <div class="viewer-actions">
+        <button class="icon-button" id="previous" type="button" aria-label="上一张" title="上一张"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button class="icon-button" id="next" type="button" aria-label="下一张" title="下一张"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        <button class="icon-button" id="close" type="button" aria-label="关闭" title="关闭"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
+    </div>
+    <img id="viewer-image" alt="">
+  </dialog>
+
+  <script>
+    const buttons = [...document.querySelectorAll('.image-button')];
+    const viewer = document.querySelector('#viewer');
+    const viewerTitle = document.querySelector('#viewer-title');
+    const viewerImage = document.querySelector('#viewer-image');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      currentIndex = (index + buttons.length) % buttons.length;
+      const button = buttons[currentIndex];
+      viewerTitle.textContent = button.dataset.title;
+      viewerImage.src = button.dataset.image;
+      viewerImage.alt = button.querySelector('img').alt;
+    }
+
+    buttons.forEach((button, index) => button.addEventListener('click', () => {
+      showImage(index);
+      viewer.showModal();
+    }));
+
+    document.querySelector('#previous').addEventListener('click', () => showImage(currentIndex - 1));
+    document.querySelector('#next').addEventListener('click', () => showImage(currentIndex + 1));
+    document.querySelector('#close').addEventListener('click', () => viewer.close());
+    viewer.addEventListener('click', (event) => { if (event.target === viewer) viewer.close(); });
+    viewer.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
+      if (event.key === 'ArrowRight') showImage(currentIndex + 1);
+    });
+  </script>
+</body>
+</html>
