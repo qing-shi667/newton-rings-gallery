@@ -68,6 +68,16 @@
 
     .group-heading p { margin: 0; color: #687272; font-size: 13px; }
 
+    .conclusion {
+      margin-top: 48px;
+      padding-top: 26px;
+      border-top: 1px solid #d9dddc;
+    }
+
+    .conclusion h2 { margin: 0 0 16px; font-size: 20px; }
+    .conclusion p { max-width: 900px; margin: 0 0 12px; line-height: 1.8; }
+    .conclusion strong { margin-right: 8px; }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -228,6 +238,12 @@
         <article class="item"><button class="image-button" type="button" data-title="白光 · 透射 · 正置" data-image="images/white-transmission-upright.png" aria-label="放大查看白光透射正置"><img src="images/white-transmission-upright.png" alt="白光透射正置条件下的牛顿环" loading="lazy"></button><div class="caption"><span>透射 · 正置</span><span>07 / 08</span></div></article>
         <article class="item"><button class="image-button" type="button" data-title="白光 · 透射 · 倒置" data-image="images/white-transmission-inverted.png" aria-label="放大查看白光透射倒置"><img src="images/white-transmission-inverted.png" alt="白光透射倒置条件下的牛顿环" loading="lazy"></button><div class="caption"><span>透射 · 倒置</span><span>08 / 08</span></div></article>
       </div>
+    </section>
+
+    <section class="conclusion" aria-labelledby="conclusion-title">
+      <h2 id="conclusion-title">观察结论</h2>
+      <p><strong>钠光</strong>反射观察时，无论正置、倒置，中心为暗条纹，条纹明暗分布一致；透射观察时，无论正置、倒置，中心为亮条纹，条纹明暗分布一致。反射与透射图样整体明暗互补。</p>
+      <p><strong>白光</strong>规律与钠光相同：反射中心暗、透射中心亮，条纹明暗分布不受放置方式影响，整套反射、透射条纹明暗互补。白光是复色光，各色光波长不同，因此条纹呈彩色。</p>
     </section>
   </main>
 
