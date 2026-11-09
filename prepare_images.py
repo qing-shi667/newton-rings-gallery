@@ -47,14 +47,16 @@ def prepare(source: Path, destination: Path) -> None:
         fillcolor="white",
     )
 
-    if source.suffix.lower() != ".jpg":
-        yy, xx = np.ogrid[:SIZE, :SIZE]
-        distance = np.hypot(xx - SIZE / 2, yy - SIZE / 2)
-        alpha = np.clip(RADIUS + 0.5 - distance, 0, 1)[..., None]
-        result_pixels = np.asarray(result).astype(np.float32)
-        result = Image.fromarray(
-            np.uint8(np.round(result_pixels * alpha + 255 * (1 - alpha)))
-        )
+    yy, xx = np.ogrid[:SIZE, :SIZE]
+    distance = np.hypot(xx - SIZE / 2, yy - SIZE / 2)
+    fade_start = RADIUS - 32
+    fade_end = RADIUS - 2
+    blend = np.clip((fade_end - distance) / (fade_end - fade_start), 0, 1)
+    alpha = (blend * blend * (3 - 2 * blend))[..., None]
+    result_pixels = np.asarray(result).astype(np.float32)
+    result = Image.fromarray(
+        np.uint8(np.round(result_pixels * alpha + 255 * (1 - alpha)))
+    )
 
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.suffix == ".jpg":
